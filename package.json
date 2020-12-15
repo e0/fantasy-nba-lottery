@@ -1,0 +1,23 @@
+{
+  "name": "fantasy-nba-lottery",
+  "version": "0.2.0",
+  "description": "Draft order simulator for fantasy NBA leagues based on the actual NBA draft lottery process.",
+  "main": "index.js",
+  "repository": "git@github.com:e0/fantasy-nba-lottery.git",
+  "author": "e0 <shan.huang@me.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "svelte": "^3.31.0",
+    "tailwindcss": "^2.0.1"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-svelte": "^3.3.1",
+    "snowpack": "^3.0.0-rc.1"
+  }
+}
