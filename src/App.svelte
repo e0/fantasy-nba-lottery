@@ -6,4 +6,6 @@
   /* css will go here */
 </style>
 
-<CombinationGenerator />
+<div class="grid grid-cols-2 gap-2 m-8">
+  <CombinationGenerator />
+</div>

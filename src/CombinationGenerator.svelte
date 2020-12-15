@@ -6,13 +6,20 @@
 
   let balls = [];
   let combination = [];
-  $: result = combination.join('-');
+
 
   function resetBalls() {
     balls = Array.from({length:NUMBER_OF_BALLS},(_,k)=>k+1);
   }
 
-  onMount(resetBalls);
+  function resetCombination() {
+    combination = Array.from({length:COMBINATION_LENGTH}, () => '?');
+  }
+
+  onMount(() => {
+    resetBalls();
+    resetCombination();
+  });
 
   function getRandomIntBetween(min, max) {
     return Math.random() * (max - min) + min;
@@ -38,8 +45,16 @@
 <style>
 </style>
 
-<div>{result}</div>
-<button on:click={generateCombination}
-  class="py-2 px-4 bg-purple-500 text-white font-mono rounded-lg shadow-md hover:bg-purple-700 focus:outline-none">
-  generate
-</button>
+<div class="flex flex-col">
+  <div class="bg-gray-900 m-x p-3 rounded">
+    <div class="flex justify-around bg-gray-700 p-2 rounded-xl">
+      {#each combination as num}
+        <span class="text-gray-100 text-5xl">{num}</span>
+      {/each}
+    </div>
+  </div>
+  <button on:click={generateCombination}
+    class="mt-3 py-2 px-4 bg-green-600 text-white font-mono rounded-lg shadow-md hover:bg-green-800 focus:outline-none">
+    generate
+  </button>
+</div>
